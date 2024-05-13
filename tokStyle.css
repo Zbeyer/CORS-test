@@ -1,0 +1,372 @@
+:root {
+	/********
+		64: 576x1024
+		48: 432x768
+		40: 360x640
+		32:	288x512
+		24:	216x384
+		20: 180x320
+		16: 144x256
+		9x16
+	********/
+	--cardHeight: 384px;
+	--cardWidth: 216px;
+
+	--gold: #b79a75;
+
+	--dark: #222;
+	--red: #701;
+	--ora: #730;
+	--yel: #550;
+	--gre: #052;
+	--blu: #035;
+	--ind: #207;
+	--vio: #805;
+
+	--light: #ddd;
+
+	--greyFG: #757575;
+	--redFG: #e02;
+	--oraFG: #b50;
+	--yelFG: #770;
+	--greFG: #085;
+	--bluFG: #07b;
+	--indFG: #85d;
+	--vioFG: #d08;
+
+	--redText: #f8a;
+	--oraText: #f90;
+	--yelText: #fc0;
+	--greText: #0f6;
+	--bluText: #3af;
+	--indText: #b9f;
+	--vioText: #f8d;
+
+	--greyBG: #eee;
+	--redBG: #fcd;
+	--oraBG: #fec;
+	--yelBG: #ffd;
+	--greBG: #cfe;
+	--bluBG: #cef;
+	--indBG: #ecf;
+	--vioBG: #fce;
+}
+
+body {
+	margin: 0 auto;
+	font-size: 90%;
+	padding: 1em 1em;
+	font-family: Verdana, sans-serif;
+	background: black;
+	color: white;
+}
+
+#index {
+	border: 1px solid var(--gold);
+	text-align: center;
+	background: black;
+	padding: 1em;
+	border-radius: 64px;
+	height: 32px;
+	width: 32px;
+	font-size: 28px;
+	line-height: 100%;
+}
+
+#prev,
+#next {
+	display: block;
+	padding: 1em 1em 0 0;
+}
+
+#prev {
+	float: left;
+}
+#next {
+	float: right;
+}
+
+footer {
+	margin: 1em auto;
+	text-align: center;
+}
+
+.flex {
+	display: flex;
+	flex-flow: wrap;
+	justify-content: center;
+}
+.card {
+	height: var(--cardHeight);
+	width: var(--cardWidth);
+}
+
+/* Source: https://www.w3schools.com/howto/howto_css_flip_card.asp
+The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+	text-align: left;
+	background-color: transparent;
+	width: var(--cardWidth);
+	height: var(--cardHeight);
+	perspective: 1000px; /* Remove this if you don't want the 3D effect */
+	margin: 0.2em 0.2em 0 0;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+
+	color: var(--light);
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+	transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden; /* Safari */
+	backface-visibility: hidden;
+}
+
+/* Style the back side */
+.flip-card-back {
+	transform: rotateY(180deg);
+}
+
+.dark {
+	background-color: var(--dark);
+	color: white;
+	text-shadow: var(--dark) 1px 1px 3px;
+	background-image: radial-gradient(
+			circle at center 80%,
+			var(--dark) 20%,
+			white 120%
+	);
+}
+.red {
+	background-color: var(--red);
+	color: var(--red);
+	background-image: radial-gradient(
+			circle at center 80%,
+			var(--red) 20%,
+			white 120%
+	);
+}
+.orange {
+	background-color: var(--ora);
+	color: var(--ora);
+	background-image: radial-gradient(
+			circle at center 80%,
+			var(--ora) 20%,
+			white 120%
+	);
+}
+.yellow {
+	background-color: var(--yel);
+	color: var(--yel);
+	background-image: radial-gradient(
+			circle at center 80%,
+			var(--yel) 20%,
+			white 120%
+	);
+}
+.green {
+	background-color: var(--gre);
+	color: var(--gre);
+	background-image: radial-gradient(
+			circle at center 80%,
+			var(--gre) 20%,
+			white 120%
+	);
+}
+.blue {
+	background-color: var(--blu);
+	color: var(--blu);
+	background-image: radial-gradient(
+			circle at center 80%,
+			var(--blu) 20%,
+			white 120%
+	);
+}
+.indigo {
+	background-color: var(--ind);
+	color: var(--ind);
+	background-image: radial-gradient(
+			circle at center 80%,
+			var(--ind) 20%,
+			white 120%
+	);
+}
+.violet {
+	color: var(--vio);
+	background-color: var(--vio);
+	background-image: radial-gradient(
+			circle at center 80%,
+			var(--vio) 20%,
+			white 120%
+	);
+}
+.bright {
+	color: black;
+	background-color: var(--light);
+	background-image: radial-gradient(
+			circle at center 80%,
+			var(--light) 20%,
+			var(--dark) 120%
+	);
+}
+
+.gem,
+.gem img {
+	height: 40px;
+	background: unset;
+}
+
+.gem,
+.gem img,
+.cardTitle {
+	display: block;
+	width: 100%;
+	object-fit: contain;
+	text-align: center;
+}
+.gem {
+	position: absolute;
+	top: 160px;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+.cardHeader {
+	display: block;
+	background-color: rgba(255, 255, 255, 0.7);
+	padding: 3px 3px 0 2px;
+	z-index: 3;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+.cardTitle {
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 0;
+	margin-left: 2px;
+	margin-right: 0 auto;
+	margin-bottom: 0;
+	z-index: 4;
+}
+
+.cardStrenth,
+.cardHealth,
+.cardCost {
+	display: inline-block;
+	vertical-align: middle;
+	font-weight: bold;
+	border-radius: 21px;
+	color: white;
+	position: absolute;
+	z-index: 5;
+	height: 32px;
+	display: block;
+	object-fit: contain;
+	text-align: center;
+}
+
+.cardCost {
+	top: 164px;
+	font-size: 24px;
+	text-align: center;
+	width: 100%;
+	color: white;
+
+	border-top: 1px solid var(--gold);
+	background: rgba(0, 0, 0, 0.4);
+}
+
+.cardStrenth {
+	top: 168px;
+	font-size: 18px;
+	left: 0;
+	width: 33%;
+	color: var(--redBG);
+}
+
+.cardHealth {
+	top: 168px;
+	font-size: 18px;
+	right: 0;
+	width: 33%;
+	color: var(--greBG);
+}
+
+.cardImage {
+	display: block;
+	height: 51%;
+	width: 100%;
+	object-fit: cover;
+	z-index: 1; /* Behind the content of .parent */
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.cardType {
+	display: block;
+	text-align: center;
+	z-index: 2;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	color: white;
+	text-shadow: var(--dark) 1px 1px 3px;
+}
+
+.gem,
+.cardTitle,
+.cardType,
+.cardImage,
+.cardElem {
+	justify-content: center;
+	margin-top: 0;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0;
+}
+
+.cardDesciption {
+	height: 46%;
+	margin-top: 0;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0;
+
+	z-index: 1; /* Behind the content of .parent */
+	padding: 4px 4px 4px 4px;
+	color: white;
+	text-align: left;
+	text-shadow: var(--dark) 1px 1px 3px;
+	display: flex;
+	border: 1px solid var(--gold);
+	z-index: 2;
+	background-color: rgba(255, 255, 255, 0.2); /* White with 20% opacity */
+	position: absolute;
+	left: 2px;
+	right: 2px;
+	bottom: 2px;
+}
