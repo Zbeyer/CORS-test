@@ -1,6 +1,6 @@
 
 // anotherFile.js
-import { sayHello, pi } from './myModule.js';
+// import { sayHello, pi } from './myModule.js';
 
 console.log(sayHello('World')); // Output: Hello, World!
 console.log(pi); // Output: 3.14159
